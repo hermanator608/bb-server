@@ -1,0 +1,16 @@
+{
+  "name": "bb-server",
+  "version": "1.0.0",
+  "description": "socket.io server",
+  "main": "index.js",
+  "author": "Brandon Herman",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.13.4",
+    "mongoose": "^4.13.7",
+    "socket.io": "^2.0.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
