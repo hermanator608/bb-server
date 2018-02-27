@@ -19,14 +19,17 @@ exports.getRedditPosts = function (redditSubModule, before = null, callback) {
       var newJson = {
         posts:[]
       };
-      redditResponse.data.children.forEach(function(child) {
-        if(child.data.domain !== 'self.node' && child.data.url && child.data.title) {
-          newJson.posts.push({
-            title: child.data.title,
-            imageUrl: child.data.url
-          });
-        }
-      });
+
+      if (redditResponse.data != null && redditResponse.data.children != null) {
+        redditResponse.data.children.forEach(function(child) {
+          if(child.data.domain !== 'self.node' && child.data.url && child.data.title) {
+            newJson.posts.push({
+              title: child.data.title,
+              imageUrl: child.data.url
+            });
+          }
+        });
+      }
       callback(null, newJson);
     })
   }).on('error', function(err) {
