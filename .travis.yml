@@ -5,8 +5,17 @@ node_js:
 
 sudo: required
 
-services:
-  - docker
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+    secure: $SECRETACCESSKEY
+  region: "us-east-2c"
+  app: "bb-server"
+  env: "BB-Server-Env"
+  bucket_name: "elasticbeanstalk-us-east-2-667050487006"
+  on:
+    branch: master
 
 after_deploy:
-  - echo "done deploying"
+  - echo "Done deploying"
