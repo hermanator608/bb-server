@@ -9,11 +9,11 @@ deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESSKEYID
   secret_access_key:
-    secure: "$SECRETACCESSKEY"
+    secure: "Encypted $SECRETACCESSKEY="
   region: "us-east-2c"
   app: "bb-server"
   env: "BB-Server-Env"
-  bucket_name: "arn:aws:s3:::elasticbeanstalk-us-east-2-667050487006"
+  bucket_name: "elasticbeanstalk-us-east-2-667050487006"
   on:
     branch: master
 
